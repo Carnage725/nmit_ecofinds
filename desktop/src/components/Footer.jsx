@@ -6,10 +6,8 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-section brand">
           <div className="footer-logo">
-            <span role="img" aria-label="leaf">
-              🌱
-            </span>{" "}
-            <b>EcoFinds</b>
+            <img src={process.env.PUBLIC_URL + "/logo.png"} alt="EcoFinds Logo" className="logo" style={{ height: 22, width: 22, marginRight: 6, verticalAlign: 'middle' }} />
+            <b style={{ verticalAlign: 'middle' }}>EcoFinds</b>
           </div>
           <p>
             Making sustainable shopping accessible to everyone.

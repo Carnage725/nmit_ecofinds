@@ -16,9 +16,7 @@ function Navbar({
           onClick={() => onNavigate("home")}
           style={{ cursor: "pointer" }}
         >
-          <span role="img" aria-label="leaf">
-            🌱
-          </span>
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="EcoFinds Logo" className="logo" style={{ height: 32, width: 32, marginRight: 8 }} />
           <span className="brand-text">EcoFinds</span>
         </div>
         <ul className="nav-links">
