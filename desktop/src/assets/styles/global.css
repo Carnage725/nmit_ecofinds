@@ -726,9 +726,6 @@
   width: 100%;
   background: #f8fafb;
   color: #222;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   border-top: 1px solid #e0e0e0;
   font-size: 0.95rem;
   z-index: 100;
@@ -783,22 +780,6 @@
   padding: 0.5rem 2rem 1rem 2rem;
   color: #888;
   font-size: 0.93rem;
-}
-
-body,
-#root,
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-.footer {
-  flex-shrink: 0;
 }
 
 /* Home */

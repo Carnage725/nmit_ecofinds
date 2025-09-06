@@ -1,10 +1,22 @@
 import React from "react";
 
-function ProductDetail({ product, onAddEcoPoints }) {
+function ProductDetail({ product, onAddToCart, onClose }) {
   if (!product) return null;
+
+  const handleAddToCart = () => {
+    onAddToCart();
+    // Show success message or keep modal open - you decide
+  };
+
   return (
-    <div className="product-detail-modal">
-      <div className="product-detail-content">
+    <div className="product-detail-modal" onClick={onClose}>
+      <div
+        className="product-detail-content"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className="modal-close" onClick={onClose}>
+          &times;
+        </button>
         <img
           src={product.image}
           alt={product.title}
@@ -25,7 +37,7 @@ function ProductDetail({ product, onAddEcoPoints }) {
           <p>
             <b>Condition:</b> {product.condition}
           </p>
-          <button onClick={onAddEcoPoints} className="add-eco-points-btn">
+          <button onClick={handleAddToCart} className="add-to-cart-btn">
             Add to Cart
           </button>
         </div>

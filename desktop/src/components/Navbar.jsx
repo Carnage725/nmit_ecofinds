@@ -6,6 +6,7 @@ function Navbar({
   onSignInClick,
   onNavigate,
   currentPage,
+  onCartClick,
 }) {
   return (
     <header className="header">
@@ -15,7 +16,9 @@ function Navbar({
           onClick={() => onNavigate("home")}
           style={{ cursor: "pointer" }}
         >
-          <img src="/logo.png" alt="EcoFinds Logo" className="logo" />
+          <span role="img" aria-label="leaf">
+            🌱
+          </span>
           <span className="brand-text">EcoFinds</span>
         </div>
         <ul className="nav-links">
@@ -57,19 +60,12 @@ function Navbar({
           </li>
         </ul>
         <div className="nav-actions">
-          <a href="#" className="cart-link" aria-label="Cart">
+          <button className="cart-link" onClick={onCartClick} aria-label="Cart">
             <span className="cart-icon" role="img" aria-label="cart">
               🛒
             </span>
-            {cartCount > 0 && (
-              <span
-                className="cart-badge"
-                style={{ color: "#ff9900", fontWeight: "bold" }}
-              >
-                {cartCount}
-              </span>
-            )}
-          </a>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+          </button>
           <button className="sign-in" onClick={onSignInClick}>
             Sign in
           </button>
