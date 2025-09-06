@@ -9,5 +9,24 @@ services:
       POSTGRES_DB: nmit_ecofinds
     ports: ["5432:5432"]
     volumes: ["nmit_pgdata:/var/lib/postgresql/data"]
+
+  api:
+    build:
+      context: ../apps/api
+    env_file:
+      - ../apps/api/.env.docker
+    ports: ["8000:8000"]
+    depends_on: ["postgres"]
+
+  web:
+    build:
+      context: ../apps/web
+      args:
+        NEXT_PUBLIC_API: http://localhost:8000
+    environment:
+      - NEXT_PUBLIC_API=http://localhost:8000
+    ports: ["3000:3000"]
+    depends_on: ["api"]
+
 volumes:
   nmit_pgdata:

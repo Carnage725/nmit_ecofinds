@@ -1,1 +1,37 @@
+# macOS
 .DS_Store
+
+# Node / Vite / Next
+node_modules/
+.next/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Python
+.venv/
+**/__pycache__/
+**/*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Env files (keep only examples)
+*.env
+*.env.*
+!*.env.example
+!apps/api/.env.example
+!apps/web/.env.example
+!apps/web/.env.local.example
+
+# Editors
+.vscode/
+.idea/
+
+# Generated/temporary
+structure.txt
